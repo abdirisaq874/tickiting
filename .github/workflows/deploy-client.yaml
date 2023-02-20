@@ -16,7 +16,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd client && docker build -t cygnetops/ticketing-client .
+      - run: cd client && docker build -t mandeez874/ticketing-client .
       - run: docker push cygnetops/ticketing-client
       - uses: digitalocean/action-doctl@v2
         with:
