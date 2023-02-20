@@ -32,7 +32,6 @@ app.all('/*', () => {
 app.use(errorHandler);
 
 const StartUp = async () => {
-  console.log("starting ...")
   if (!process.env.JWT_KEY) {
     throw new Error('environment virable is not defined');
   }
