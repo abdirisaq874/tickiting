@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'auth/**'
+      - 'Auth/**'
 
 jobs:
   build:
@@ -16,5 +16,5 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd auth && docker build -t mandeez874/auth .
-      - run: docker push mandeez874/auth
+      - run: cd Auth && docker build -t mandeez874/Auth .
+      - run: docker push mandeez874/Auth
