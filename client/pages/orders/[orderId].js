@@ -10,11 +10,11 @@ const OrderShow = ({ currentUser }) => {
   const [order, setorder] = useState('');
   const [timeLeft, setTimeLeft] = useState(0);
   const { doRequest,errors,setErrors } = useRequest({
-    url: `https://ticketing.dev/api/orders/${orderId}`,
-    // method: 'post',
-    // body: {
-    //   orderId: order.id,
-    // },
+    url: "/api/payments",
+    method: 'post',
+    body: {
+      orderId: order.id,
+    },
     onSuccess: () => router.push('/orders'),
   });
 
@@ -65,7 +65,7 @@ const OrderShow = ({ currentUser }) => {
 
   return (
     <div className="container">
-      {order && (
+      {order  && (
         <div>
           Time left to pay: {timeLeft} seconds
           <StripeCheckout
